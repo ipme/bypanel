@@ -13,5 +13,4 @@ polar: # Replace with a single Polar username
 buy_me_a_coffee: # Replace with a single Buy Me a Coffee username
 thanks_dev: # Replace with a single thanks.dev username
 custom: # Replace with up to 4 custom sponsorship URLs e.g., ['link1', 'link2']
-liberapay: main_user       # 主账户（显示官方 Liberapay 按钮）
-custom: ["https://liberapay.com/cn/"]  # 次要账户（自定义链接）
+liberapay: cn       # 主账户（显示官方 Liberapay 按钮）
