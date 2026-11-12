@@ -77,13 +77,13 @@ bypanel up -d
 bypanel exec SERVICE COMMAND
 ```
 ### 站点根目录权限
-#### 方案 A: `-exec {} +`（**✅ Recommended**）
+#### 方案 A: `-exec {} +`（**✅ 推荐**）
 ```bash
 sudo chown -R 1000:1000 /data/webroot && \
 sudo find /data/webroot -type d -exec chmod 755 {} + && \
 sudo find /data/webroot -type f -exec chmod 644 {} +
 ```
-#### 方案 B: `find -print0 | xargs -0`（**🟡 Alternative**）
+#### 方案 B: `find -print0 | xargs -0`（**🟡 备选**）
 ```bash
 sudo chown -R 1000:1000 /data/webroot && \
 sudo find /data/webroot -type d -print0 | xargs -0 chmod 755 && \
