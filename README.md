@@ -89,10 +89,17 @@ bypanel exec SERVICE COMMAND
 ```
 
 ### Set website root directory permissions
+#### Solution A: `-exec {} +`（**✅ Recommended**）
+```bash
+sudo chown -R 1000:1000 /data/webroot && \
+sudo find /data/webroot -type d -exec chmod 755 {} + && \
+sudo find /data/webroot -type f -exec chmod 644 {} +
 ```
-sudo chown -R 1000:1000 /data/webroot
-sudo find /data/webroot -type d -print0 | sudo xargs -0 chmod 755
-sudo find /data/webroot -type f -print0 | sudo xargs -0 chmod 644
+#### Solution B: `find -print0 | xargs -0`（**🟡 Alternative**）
+```bash
+sudo chown -R 1000:1000 /data/webroot && \
+sudo find /data/webroot -type d -print0 | xargs -0 chmod 755 && \
+sudo find /data/webroot -type f -print0 | xargs -0 chmod 644
 ```
 ### Setting up virtual hosts on HTTP Server
 
